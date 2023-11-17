@@ -20,8 +20,10 @@ Les fichiers envoyés en retard ou par email ne sont pas acceptés.
 
 ## Usage
 
-Solution can be run via:
+Script can be run via:
 
 ```sh
 Rscript src/main.r
 ```
+
+> **Note**: This won't display any graphics, but instead, output a PDF file containing the graphic.
