@@ -23,7 +23,13 @@ Les fichiers envoyés en retard ou par email ne sont pas acceptés.
 Script can be run via:
 
 ```sh
-Rscript src/main.r
+./run.sh
+```
+
+or
+
+```sh
+Rscript main.R
 ```
 
 > **Note**: This won't display any graphics, but instead, output a PDF file containing the graphic.

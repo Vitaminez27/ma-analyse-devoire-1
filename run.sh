@@ -1,0 +1,1 @@
+cd src && Rscript main.R
