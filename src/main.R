@@ -1,4 +1,2 @@
-data <- read.csv("eaux.csv")
-
-str(data)
-head(data)
+data <- read.csv("src/eaux.csv")
+View(data)
