@@ -10,6 +10,9 @@ print("2 - Oui, il est généralement recommandé de centrer et de réduire les 
 # 3 - Quelles sont les variables à exclure de l’ACP ? Pourquoi ?
 print("3 - Nous devrions exclure NOM, ACRO, PAYS, TYPE, et PG parce qu'ils ne sont pas des valeurs numériques.")
 
+# 4 - Pour la suite du problème, la dernière variable (la masse moyenne des ions) sera considérée dans l’ACP comme “ variable supplémentaire”. Pouvez-vous argumenter ce choix ?
+print("4 - La masse ionique moyenne fournit une mesure agrégée de la composition ionique de l'eau. En incluant cette variable, nous pouvons synthétiser l'information contenue dans les différentes concentrations d'ions (CA, MG, NA, K, SUL, NO3, HCO3, CL) en une seule variable, ce qui peut simplifier l'interprétation des résultats de l'ACP.")
+
 # dt <- data[, 6:14]
 # dt <- sapply(dt, function(x) as.numeric(gsub(",", ".", x)))
 
