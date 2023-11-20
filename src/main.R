@@ -1,4 +1,4 @@
-data <- read.csv("src/eaux.csv", header = TRUE)
+data <- read.csv("eaux.csv", header = TRUE)
 View(data)
 
 # 1 - Est-il pertinent, dans le cas présent, de recourir à une Analyse en Composantes Principales (ACP) pour réduire le nombre de variables ? Justifier.
@@ -25,7 +25,7 @@ pourcentage_var_expliquee <- variance_expliquee / sum(variance_expliquee) * 100
 
 cat("5 - Pourcentage de variabilité expliquée par la 1ère composante :", round(pourcentage_var_expliquee[1], 2), "%\n")
 cat("  - Pourcentage de variabilité expliquée par la 2ème composante :", round(pourcentage_var_expliquee[2], 2), "%\n")
-cat("  - Pourcentage totale des deux première composantes est ", round(pourcentage_var_expliquee[1] + pourcentage_var_expliquee[2], 2), "%\n")
+cat("  - Pourcentage totale variabilité expliquée par les deux première composantes est ", round(pourcentage_var_expliquee[1] + pourcentage_var_expliquee[2], 2), "%\n")
 
 # 6 - Combien de composantes suggériez-vous pour cette étude ? Justifiez.
 cat("6 - Nous pouvons proposer \"trois\" éléments pour cette étude.\n")
@@ -46,7 +46,7 @@ charges_variables <- data_acp$rotation
 charges_pc2 <- charges_variables[, 2]
 cat("  - En fonction de la charge de chaque variable sur cette composante : \n")
 print(charges_pc2)
-cat("  - En examinant ces charges, nous pouvons identifier les variables qui contribuent positivement et négativement à cette composante. Les variables dont la charge est élevée (positive ou négative) sont celles qui s'opposent le plus fortement à la deuxième composante principale.")
+cat("  - En examinant ces charges, nous pouvons identifier les variables qui contribuent positivement et négativement à cette composante. Les variables dont la charge est élevée (positive ou négative) sont celles qui s'opposent le plus fortement à la deuxième composante principale.\n")
 
 # 8 - Quelle est la variable qui a la plus forte contribution dans la troisième composante.
 charges_pc3 <- charges_variables[, 3]

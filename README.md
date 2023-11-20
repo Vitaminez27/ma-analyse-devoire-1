@@ -32,4 +32,4 @@ or
 Rscript main.R
 ```
 
-> **Note**: This won't display any graphics, but instead, output a PDF file containing the graphic.
+> **Note**: This won't display any graphics, but instead, output a file containing the graphic.
