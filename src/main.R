@@ -14,8 +14,9 @@ cat("3 - Nous devrions exclure NOM, ACRO, PAYS, TYPE, et PG parce qu'ils ne sont
 cat("4 - La masse ionique moyenne fournit une mesure agrégée de la composition ionique de l'eau. En incluant cette variable, nous pouvons synthétiser l'information contenue dans les différentes concentrations d'ions (CA, MG, NA, K, SUL, NO3, HCO3, CL) en une seule variable, ce qui peut simplifier l'interprétation des résultats de l'ACP.\n")
 
 # 5 - Faire une ACP. Quel pourcentage de variabilité est expliqué par les deux premières composantes ?
+dt <- data[, 6:14]
 data_numerique <- sapply(dt, function(x) as.numeric(gsub(",", ".", x)))
-data_cr <- scale(dt, center=TRUE, scale=TRUE)
+data_cr <- scale(data_numerique, center=TRUE, scale=TRUE)
 
 data_acp <- prcomp(data_cr, scale.=TRUE)
 
@@ -38,3 +39,8 @@ cat("      * La deuxième composante contribue de manière significative (22,98 
 cat("      * La troisième composante apporte encore une contribution raisonnable (10,92 %).\n")
 cat("  -  Après la troisième composante, les pourcentages commencent à diminuer rapidement, ce qui suggère des rendements décroissants en termes d'explication de la variance.\n")
 cat("  -  Sur la base de ces informations, nous pourrions envisager de conserver les trois premières composantes, car elles expliquent collectivement une proportion substantielle de la variance totale (53,18 % + 22,98 % + 10,92 % = 87,08 %).\n")
+
+charges_variables <- data_acp$rotation
+print(charges_variables)
+charges_pc2 <- charges_variables[, 2]
+print(charges_pc2)
