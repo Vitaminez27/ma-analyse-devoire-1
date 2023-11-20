@@ -41,9 +41,16 @@ cat("  -  Après la troisième composante, les pourcentages commencent à diminu
 cat("  -  Sur la base de ces informations, nous pourrions envisager de conserver les trois premières composantes, car elles expliquent collectivement une proportion substantielle de la variance totale (53,18 % + 22,98 % + 10,92 % = 87,08 %).\n")
 
 # 7 - Quelles sont les variables que la deuxième composante oppose ?
-cat("7 - Les variables qui s'opposent à la deuxième comparaison sont CA et SUL.\n")
+cat("7 - Les variables qui s'opposent à la deuxième comparaison sont \"CA\" et \"SUL\".\n")
 charges_variables <- data_acp$rotation
 charges_pc2 <- charges_variables[, 2]
 cat("  - En fonction de la charge de chaque variable sur cette composante : \n")
 print(charges_pc2)
 cat("  - En examinant ces charges, nous pouvons identifier les variables qui contribuent positivement et négativement à cette composante. Les variables dont la charge est élevée (positive ou négative) sont celles qui s'opposent le plus fortement à la deuxième composante principale.")
+
+# 8 - Quelle est la variable qui a la plus forte contribution dans la troisième composante.
+charges_pc3 <- charges_variables[, 3]
+variable_max_contrib <- names(charges_pc3)[which.max(abs(charges_pc3))]
+cat("8 - La variable qui a la plus forte contribution dans la troisième composante est \"", variable_max_contrib, "\"\n")
+cat("  - En fonction de la charge de chaque variable sur cette composante : \n")
+print(charges_pc3)
